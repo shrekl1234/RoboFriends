@@ -1,0 +1,12 @@
+input{
+    background: inherit;
+    border: none;
+    color: ivory;
+    height: 50px;
+    border-bottom: 1px solid white;
+    margin-bottom: 20px;
+}
+
+::placeholder{
+    color: rgba(255, 255, 255, .8);
+}

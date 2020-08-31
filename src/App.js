@@ -5,6 +5,7 @@ import 'tachyons';
 import CardList from "./component/card-list/card-list.component";
 import {robotsData} from './robots';
 import SearchBox from './component/search-box/search-box.component';
+import Scroll from './component/scroll/scroll.component';
 
 function App() {
   const [robots,setRobots] = React.useState({robotsData});
@@ -13,9 +14,11 @@ function App() {
   const filterRobots = robotsData.filter((robot) => (robot.name.toLowerCase().includes(searchField.toLocaleLowerCase())));
   return (
     <div className="App tc">
-      <h1>RoboFrineds</h1>
+      <h1 className="f1">RoboFrineds</h1>
       <SearchBox searchChange={searchChange} />
-      <CardList robots={filterRobots} />
+      <Scroll>
+          <CardList robots={filterRobots} />
+      </Scroll>
     </div>
   );
 }
