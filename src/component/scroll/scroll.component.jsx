@@ -3,10 +3,10 @@ import "./scroll.styles.css";
 
 const Scroll = ({ children }) => {
   return (
-    <div
+    <div className="scroll"
       style={{
         overflowY: "scroll",
-        height: "100vh",
+        height: "70vh",
       }}
     >
       {children}
