@@ -7,14 +7,18 @@ import CardList from "./component/card-list/card-list.component";
 import {robotsData} from './robots';
 import SearchBox from './component/search-box/search-box.component';
 import Scroll from './component/scroll/scroll.component';
-import {setSearchField} from './action';
+import {setSearchField, requestRobots} from './action';
 
 const mapStateToProps = (state) => ({
-  searchField: state.searchField,
+  searchField: state.searchRobots.searchField,
+  robot: state.requestRobots.robot,
+  isPending: state.requestRobots.isPending,
+  error: state.requestRobots.error
 });
 
-const mapDispatchToProps = dispatch => ({
-onSearchChange: (event) => (dispatch(setSearchField(event.target.value)))
+const mapDispatchToProps = (dispatch) => ({
+  onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+  onRequestRobots: () => dispatch(requestRobots()) // same as requestRobots(dispatch)
 });
 
 const App = (props) => {
